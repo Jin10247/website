@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>購物車清單</title>
+  <!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="./style3.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!-- 導覽列（固定在頂部） -->
+<nav class="navbar navbar-expand-md custom-navbar fixed-top">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href="index.html">
+      <a class="navbar-brand" href="#" style="color: #593508; font-family: 'Noto Serif TC', serif;">找梗？</a>
+
+      <span class="brand-text">我梗梗於懷</span>
+    </a>
+    <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav ml-auto">
+
+        <li class="nav-item"><a class="nav-link" href="index.html">首頁</a></li>
+
+        <li class="nav-item"><a class="nav-link" href="商品頁.html">商品清單</a></li>
+
+        <li class="nav-item"><a class="nav-link" href="購物清單.html">購物車清單</a></li>
+
+        <li class="nav-item"><a class="nav-link" href="聯絡資訊.html">賣家資訊</a></li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- 內容 -->
+ <div class="main-wrapper container py-5" style="margin-top: 100px;">
+  <div class="box">
+  <div class="text-center mb-5">
+<div class="container mt-5">
+    <h2 class="text-center mb-4">購物車</h2>
+    <div id="cart-list"></div>
+    <p class="text-end fs-4">總金額：<span id="total-price">0</span> 元</p>
+    <div class="text-center">
+        <button class="btn btn-primary btn-lg" onclick="checkout()">結帳</button>
+    </div>
+</div>
+<!-- partial -->
+  <script  src="./script3.js"></script>
+
+</body>
+</html>
