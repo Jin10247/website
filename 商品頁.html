@@ -1,83 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>首頁</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./style1.css">
+  <title>商品清單</title>
+  <!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./style1.css">
+
 </head>
 <body>
-  <nav class="navbar navbar-expand-md custom-navbar fixed-top">
-    <div class="container">
-      <a class="navbar-brand d-flex align-items-center" href="index.html">
-        <span style="color: var(--nav-text-color); font-family: 'Noto Serif TC', serif;">找梗？</span>
-        <span class="brand-text">我梗梗於懷</span>
-      </a>
-      <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="collapsibleNavbar">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item"><a class="nav-link" href="index.html">首頁</a></li>
-          <li class="nav-item"><a class="nav-link" href="商品頁.html">商品清單</a></li>
-          <li class="nav-item"><a class="nav-link" href="購物清單.html">購物車清單</a></li>
-          <li class="nav-item"><a class="nav-link" href="聯絡資訊.html">賣家資訊</a></li>
-        </ul>
-      </div>
+<!-- partial:index.partial.html -->
+<nav class="navbar navbar-expand-md custom-navbar fixed-top">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href="index.html">
+      <a class="navbar-brand" href="#" style="color: #593508; font-family: 'Noto Serif TC', serif;">找梗？</a>
+
+      <span class="brand-text">我梗梗於懷</span>
+    </a>
+    <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+     <ul class="navbar-nav ml-auto">
+
+        <li class="nav-item"><a class="nav-link" href="index.html">首頁</a></li>
+
+        <li class="nav-item"><a class="nav-link" href="商品頁.html">商品清單</a></li>
+
+        <li class="nav-item"><a class="nav-link" href="購物清單.html">購物車清單</a></li>
+
+        <li class="nav-item"><a class="nav-link" href="聯絡資訊.html">賣家資訊</a></li>
+
+      </ul>
     </div>
-  </nav>
+  </div>
+</nav>
 
   <div class="main-wrapper container py-5" style="margin-top: 100px;">
-    <div class="text-center mb-5">
-      <h1 class="display-4 fw-bold"><b>我梗梗於懷</b></h1>
-      <p class="lead">你的腦洞補給站，讓生活再梗一點！</p>
-      <p>這是一家不賣商品，只賣梗的商店</p>
-      <p>無論你是：</p>
-      <p>
-        無梗不歡的人<br>
-        正在尋找生活樂趣的人<br>
-        雖然受夠諧音，但還是忍不住點進來的人<br>
-      </p>
-      <p>都歡迎你們來到此店一起讓生活諧起來!</p>
-      <a href="商品頁.html" class="btn btn-primary btn-lg mt-3">立刻逛店</a>
-    </div>
-
-    <div class="row text-center mb-5">
-      <div class="col-md-4 mb-3">
-        <div class="card shadow h-100">
-          <div class="card-body">
-            <h5 class="card-title">食物梗</h5>
-            <p class="card-text">餓了嗎?這些商品讓你吃梗不吃虧</p>
-            <a href="商品頁.html?category=食物" class="btn btn-outline-primary">逛逛食物梗</a>
-          </div>
+    <form id="searchForm" class="form-inline mb-3 justify-content-center">
+      <div class="input-group w-50">
+        <input type="text" id="searchInput" class="form-control" placeholder="搜尋名稱 / 分類">
+        <div class="input-group-append">
+          <button type="submit" class="btn btn-primary">搜尋</button>
+          <button type="button" class="btn btn-outline-secondary" onclick="resetSearch()">清除</button>
         </div>
       </div>
+    </form>
 
-      <div class="col-md-4 mb-3">
-        <div class="card shadow h-100">
-          <div class="card-body">
-            <h5 class="card-title">生活日常梗</h5>
-            <p class="card-text">無聊了嗎?讓日常也能爆梗</p>
-            <a href="商品頁.html?category=生活" class="btn btn-outline-primary">逛逛生活日常梗</a>
-          </div>
-        </div>
-      </div>
+    <p id="searchTip" class="text-center d-none">搜尋結果關鍵字：<strong id="keywordDisplay"></strong></p>
+    <p id="noResult" class="text-center text-danger d-none">查無符合的商品</p>
 
-      <div class="col-md-4 mb-3">
-        <div class="card shadow h-100">
-          <div class="card-body">
-            <h5 class="card-title">動作梗</h5>
-            <p class="card-text">來點動感，讓梗活起來~</p>
-            <a href="商品頁.html?category=動作" class="btn btn-outline-primary">逛逛動作梗</a>
-          </div>
-        </div>
-      </div>
-    </div>
+    <h2 class="text-center mb-4">商品清單</h2>
+    <div id="productContainer" class="row row-cols-1 row-cols-md-3 g-4"></div>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script1.js"></script> </body>
+</html>
+<!-- partial -->
+  <script  src="./script1.js"></script>
+
 </body>
 </html>
